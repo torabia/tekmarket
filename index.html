@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tekmark | انتخاب بهینه</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/fontawesome-all.css">
+
+</head>
+
+<body>
+
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+
+			<div class="navbar-header">
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<a href="#" class="navbar-brand"><img src="img/logo.png" alt="Faradars Logo"
+						class="d-inline-block align-top"></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto interface">
+					<li class="nav-item active "><a class="nav-link" href="./Contact_us.html">تماس با ما</a></li>
+					<li class="nav-item active "><a class="nav-link">صفحه اصلی</a></li>
+
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+	<!-- Background -->
+	<div class="intro">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="intro-message">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Posts -->
+	<div class="content2">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 col-sm-6">
+					<h2 class="section-heading">بهترین را از ما بخواهید ؟</h2>
+					<p class="text-justify"> هر کجا و هر مکان شما میتوانید به ارزانترین و با کیفیت ترین کالا ها درسترسی
+						پیدا کنید ، تک مارکت شما را برای انتخابی درست راهنمایی میکند ، خدمت به شما افتخار ماست ، در تک
+						مارکت ثبت نام کنید و به خدمات ما دسترسی بیش تر داشته باشید.</p>
+				</div>
+				<div class="col-md-5 col-md-offset-2 col-sm-6">
+					<img src="img/first.png" alt="Responsive" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Posts -->
+	<div class="content2">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 col-sm-6">
+					<img src="img/Programmer.jpg" alt="Responsive" class="img-fluid">
+				</div>
+				<div class="col-md-5 col-md-offset-2 col-sm-6">
+					<hr class="myDevider">
+					<div class="clearfix"></div>
+					<a id="about"></a>
+					<h2 class="section-heading">گروه برنامه نویسان</h2>
+					<p class="text-justify">گروه ما در سه زمینه ی طراحی وب سایت ، اپلیکیشن و همچنین موشن
+						گرافیک توانسته در بخش های مختلفی اقدام به کار نماید و خروجی مناسب را در مینه های مختلف ایجاد
+						بنماید هدف ما این است به بتوانیم در آینده نزدیک به دستاورد های بزرگ برسیم.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Posts -->
+	<div class="content1">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 col-md-offset-2 col-sm-4  ">
+					<hr class="myDevider">
+					<div class="clearfix"></div>
+					<h2 class="section-heading">بهترین را از ما بخواهید ؟</h3>
+						<p class="text-justify"> هر کجا و هر مکان شما میتوانید به ارزانترین و با کیفیت ترین کالا ها
+							درسترسی
+							پیدا کنید ، تک مارکت شما را برای انتخابی درست راهنمایی میکند ، خدمت به شما افتخار ماست ، در
+							تک
+							مارکت ثبت نمام کنید و به خدمات ما دسترسی بیش تر داشته باشید.</p>
+						<button class="button button1"> دانلود اپلیکیشن </button>
+				</div>
+				<div class="col-md-5 col-sm-6  ">
+					<img src="img/phone_uo.jpg" alt="Responsive" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="demoMap" style="height:250px"></div>
+	<script src="./js/OpenLayers.js"></script>
+	<script>
+		var lat = 35.6862093;
+		var lon = 51.4179023;
+		var zoom = 18;
+
+		var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+		var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+		var position = new OpenLayers.LonLat(lon, lat).transform(fromProjection, toProjection);
+
+		map = new OpenLayers.Map("demoMap");
+		var mapnik = new OpenLayers.Layer.OSM();
+		map.addLayer(mapnik);
+
+		var markers = new OpenLayers.Layer.Markers("Markers");
+		map.addLayer(markers);
+		markers.addMarker(new OpenLayers.Marker(position));
+
+		map.setCenter(position, zoom);
+	</script>
+
+	<!-- Footer -->
+	<footer class="page-footer font-small blue">
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">© 2020 Copyright:
+			<a href="https://mdbootstrap.com/education/bootstrap/"> tekmark.net</a>
+		</div>
+		<!-- Copyright -->
+
+	</footer>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
